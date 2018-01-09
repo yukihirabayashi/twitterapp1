@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diary</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <nav>
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><%= link_to 'HOME', '/' %></li>
+      <li role="presentation"><%= link_to 'つぶやき一覧', '/diaries' %></li>
+      <li role="presentation"><%= link_to '新規投稿', '/diaries/new/' %></li>
+    </ul>
+    </nav>
+
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+  
+  <footer>
+    <p>Twitter app</p>
+    <p>2018/01/07    Yuki Hirabayashi</p>
+  </footer>
+
+</html>

@@ -1,0 +1,21 @@
+<div class="container">
+ <h1>つぶやき一覧</h1>
+
+<p><%= notice %></p>
+
+
+  <% @diaries.each do |diary| %>
+  <div class="col-xs-12 col-sm-6 col-md-6 diary-panel">
+    <h3><%= diary.content %></h3>
+
+      <div class="diary-links">
+        <%= link_to '詳細', diary_path(diary.id), class: "btn btn-primary" %>
+        <%= link_to '編集', edit_diary_path(diary.id), class: "btn btn-warning" %>
+        <%= link_to '削除', diary_path(diary.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } , class: "btn btn-danger" %>
+      </div>
+  </div>
+  <% end %>
+  
+</div>
+<%= link_to 'つぶやき一覧画面にもどる', '/index' %>
+<%= link_to '新しくつぶやく', new_diary_path %>
